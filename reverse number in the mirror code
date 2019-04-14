@@ -1,0 +1,5 @@
+ while (numar >0){
+            numarInOglinda*=10;
+            numarInOglinda=numar%10;
+            numar/=10;
+            System.out.print(numarInOglinda);
