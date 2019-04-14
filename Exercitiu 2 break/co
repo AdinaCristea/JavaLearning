@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+
+public class ClasaExersare {
+
+    public static void main(String[] args) {
+
+        /*2. Scrie un program care afiseaza primele 5 numere impare dintr-un interval dat.
+        Se vor citi de la tastatura 2 numere intregi: left respectiv right, care reprezinta capetele intervalului.
+        In cazul in care in interval se gasesc mai putin de 5 numere impare, se vor afisa toate numerele impare din interval.
+
+        */
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introdu minimul intervalului");
+        int left = sc.nextInt();
+        System.out.println("Introdu maximul intervalului");
+        int right = sc.nextInt();
+        int contor = 0;
+
+
+        for (int i = left; i < right; i++) {
+            while (true) {
+                if (i % 2 == 1) {
+                    System.out.println(i);
+                    i++;
+                } else {
+                    i++;
+                    contor++;
+                }
+                if (contor == 5) {
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
