@@ -1,0 +1,45 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+      /*  1. Implementeaza un sumator de numere cu resurse limitate.
+       Acest sumator va realiza suma numerelor introduse de utilizator, pana la introducerea unui numar negativ,
+       dar nu mai mult de 10 numere. Cu alte cuvinte, sumatorul va afisa suma numerelor si se va termina in oricare dintre cele doua cazuri:
+
+        Utilizatorul a introdus deja 10 numere.
+        Utilizatorul introduce un numar negativ (i.e. inainte de introducerea a 10 numere). */
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introdu numarul de valori ");
+        int PrimulNR = sc.nextInt();
+        int counter = 0;
+        int counterLimita=10;
+        int suma=0;
+
+        if(PrimulNR<0){
+            System.out.println("Numarul introdus este mai mic de 0. Porgramul se va inchide");
+        }
+
+        for (int i = 0; i <= counterLimita; i++) {
+            System.out.println("Introdu valoarea a " + (i+1) + " :" );
+            int nn = sc.nextInt();
+            counter++;
+            suma +=nn;
+
+            if (counter == 9 || nn < 0) {
+                System.out.println("Ati introdus mai mult de 10 numere");
+                break;
+
+            }
+
+        }
+        System.out.println("Suma finala este "+ suma);
+
+
+
+    }
+}
