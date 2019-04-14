@@ -39,7 +39,11 @@ public class Main {
         }
         System.out.println("Suma finala este "+ suma);
 
-
+  if (suma>0) {
+            System.out.println("Suma finala este " + suma);
+        } else {
+            System.out.println();
+        }
 
     }
 }
