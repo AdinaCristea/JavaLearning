@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+
+public class ClasaExersare {
+
+    public static void main(String[] args) {
+
+
+        int left = 0;
+        int right = 10;
+        System.out.println("Bun Venit! Te invitam sa ghicesti numarul, aflat in intervalul " + "[ " + left + "," + right + " :]");
+        Scanner sc = new Scanner(System.in);
+        int numarMagic = 5;
+        int incercare;
+
+
+        do {
+            System.out.println("Incearca-ti norocul:");
+
+            incercare = sc.nextInt();
+
+            if (incercare < 5) {
+                System.out.println("Introdu un numar mai mare");
+            }
+
+            if (incercare > 5) {
+                System.out.println("Introdu un numar mai mic");
+            }
+        }
+
+            while (incercare != 5) ;
+
+        System.out.println("Ai Ghicit, bravo!");
+    }
+}
+
+
+
+
+
+
+
+
