@@ -1,0 +1,37 @@
+package work;
+
+import java.util.Scanner;
+
+public class For {
+
+	public static void main(String[] args) {
+	
+		/*1. Folosind instructiunea switch, scrie un program care citeste de la tastatura
+		 * un caracter si afiseaza un cuvant (la alegere) care incepe cu acel caracter.
+		 *  Tratati doar cazurile pentru caracterele d, e, v, si s si afisati un mesaj 
+		 *  de eroare corespunzator pentru orice alte litere introduse.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introdu unul din urmatoarele caractere D,E,V");
+		
+		String character =sc.next();
+		
+		switch(character) {
+		
+		case "D":
+			System.out.println("Draga dragule dezvoltator!");
+			break;
+		case "E":
+			System.out.println("Evoluezi efectiv excelent!");
+			break;
+		case "V":
+			System.out.println("Victorios!");
+			break;
+		default: 
+			System.out.println("EROARE! Introdu unul dintre urmatoarele caractere pentru a genera mesajul. D,E,V");
+			
+		}
+		 
+	}
+}
