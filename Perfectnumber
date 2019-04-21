@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Curs11Ex4 {
+
+	
+	public static boolean isPerfectNumber(int number) {
+		int calc=0;
+		for(int i=1;i<=number/2;i++) {
+			if(number%i==0) {
+				calc+=i;
+			}
+		}
+		if(calc==number) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+	
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Introdu un numar");
+	
+	int numar=sc.nextInt();
+	System.out.println("Numarul "+ numar + " are valoarea " + isPerfectNumber(numar));
+		//Scrie un program care afiseaza toate numerele perfecte pana la o valoare n citita de la tastatura.
+		// Scrie codul modularizat, folosind cel putin o metoda care sa determine daca un numar este perfect
+		//si o alta metoda care afiseaza toate numerele perfecte pana la n. Testeaza codul in main(…), pentru diverse valori (n).
+		
+	for (int i=0;i<numar;i++) {
+		if(isPerfectNumber(i)) {
+			System.out.print(i+ " ");
+
+
+	}
+
+}
+}
+}
