@@ -1,0 +1,221 @@
+package proiect1;
+
+public class PlayerStatus {
+	
+
+		
+		private final String nickname;
+		private int score;
+		private int lives;
+		private int health;
+		private String weaponInHand;
+		double positionX;
+		double positionY;
+		public static String gameName="Dorn"; // nu ar trebui sa fie si finnal?
+
+		private String knife="1000"; ///nu sunt sigura daca sunt necesare
+		private String sniper="10000"; //nu sunt sigura daca sunt necesare
+		private String kalashnikov="20000"; // nu sunt sisgura daca sunt necesare
+		private int weaponPrice;
+		private int artifactCode;
+		
+		
+		//Getters si setters//
+		public static String getGamename() {
+			return gameName;
+		}
+		
+		static void setGamename(String name) {
+			gameName=name;
+		}
+		
+		public String getNickname() {
+			return nickname;
+		}
+
+		public int getScore() {
+			return score;
+		}
+		public void setScore(int score) {
+			this.score = score;
+		}
+		public int getLives() {
+			return lives;
+		}
+		public void setLives(int lives) {
+			this.lives = lives;
+		}
+		public int getHealth() {
+			return health;
+		}
+		public void setHealth(int health) {
+			this.health = health;
+			if (health==0) {
+				lives=lives-1;
+				health=100;	
+			} else {
+				health/=100;
+			}
+
+		}
+		public String getWeaponInHand() {
+			return weaponInHand;
+		}
+		public boolean setWeaponInHand(int String) {
+			if(this.weaponInHand=="knife") {
+				weaponPrice=1000;
+				score-=weaponPrice;
+			} else if(this.weaponInHand=="sniper") {
+				weaponPrice=10000;
+				score-=weaponPrice;
+			} else if(this.weaponInHand=="kalashikov") {
+				weaponPrice=20000;
+				score-=weaponPrice;
+			}
+			return true;
+		}
+		
+		// Positions au fost facute proprietati:
+		
+		public double getPositionX() {
+			return positionX;
+		}
+		public void setPositionX(double positionX) {
+			this.positionX = positionX;
+			
+		}
+		public double getPositionY() {
+			return positionY;
+		}
+		public void setPositionY(double positionY) {
+			this.positionY = positionY;
+			
+			
+		}
+		
+		//Reguli de joc
+		
+		public void livesScore(int value) {
+			if(lives==0) {
+				System.out.println("GameOver");
+			}
+		}
+		
+		//Duel:
+		//a. arme la fel
+		
+		public void CompareWeapon(PlayerStatus player2) {
+			if (player1.weaponInHand.equals("knife") ||player1.weaponInHand.equals("sniper") || player1.weaponInHand.equals("kalashnikov")) {
+				int probabilityWin=((3*health+score/1000)/4);
+				// nu stiu cum sa implementez pentru obiecte comparatiile. Nu ar trebui mai intai sa creez obiectele?
+				//cum scriu faptul ca playerul cu punctaj mai mare va avea castig?
+		
+		}
+		
+		
+		public double calculateDistance(PlayerStatus player2) {
+		double a=Math.sqrt(Math.pow(this.getPositionX()-player2.getPositionX(),2)+Math.pow(this.getPositionY()-player2.getPositionY(),2));
+		reurn a;
+		}
+		
+		
+
+
+		//Comportament
+		//1.Constructori
+		// Daca celelalte campuri primesc parametri, ele se vor initia la 0 sau null, nu? Pentru ca sunt deja definite
+
+		
+		public PlayerStatus(String nickname) {
+			this.nickname=nickname;
+		}
+			
+		public PlayerStatus(String nickname,int lives) {
+			this(nickname);
+			this.lives=lives;	
+		}
+		
+		public PlayerStatus(String nickname, int lives, int score) {
+			this(nickname,lives);
+			this.score=score;
+		}
+		
+		//Is perfect number method. Am incercat sa o fac in alta clasa dar nu a luat-o.
+		public boolean isPerfectNumberArtifact(int number) {
+			int temp=0;
+			for(int i=1;i<number/2;i++) {
+				if(number%i==0) {
+					temp+=i;
+				}
+			}
+			if(temp==number) {
+				return true;
+			} else {
+				return false;
+			}
+			}
+		
+		// is prime number method.
+		
+		public boolean isPrimeNumber(int number) {
+			for(int i=2;i<number/2;i++) {
+				if(number%i==0) {
+					return false;
+				}
+			}
+			return true;
+		}
+		
+		// numar par si suma cifrelor divizibila cu 3
+		public boolean isEvenAnd3div(int number) {
+			int sumDigits=0;
+			int copieNumber=number;
+			while(copieNumber>0) {
+				int lastDigits=copieNumber%10;
+				sumDigits+=lastDigits;
+				copieNumber/=10;
+			}
+			for(int i=0;i<number;i++) {
+				if((number%i==0) && (sumDigits%3==0)){
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		public void findArtifact(int artifactCode) {
+			if(isPerfectNumberArtifact(artifactCode)) {
+				score+=5000;
+				lives+=1;
+				health=100;
+			} else if (isPrimeNumber(artifactCode)) {
+				score+=1000;
+				lives+=2;
+				health=25; {
+					if(health>=100) {
+						health=100;
+					}
+				}
+			} else if(isEvenAnd3div(artifactCode)) {
+				score-=3000;
+				health-=25; {
+					if(health==0) {
+						lives-=1;
+						health=100;
+					}
+				}
+			} else { 
+				score+=artifactCode;
+			}
+		}
+			
+			
+			//7.movePlayerTo(
+			public void movePlayerTo(double positionX, double positionY) {
+				this.positionX=positionX;
+				this.positionY=positionY;
+			}
+	}
+
+
+		
