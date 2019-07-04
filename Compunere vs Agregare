@@ -1,0 +1,71 @@
+Animal 
+
+int age
+int specie
+
+-> Suprascriere metoda equals
+
+@Overwrite
+
+public boolean equals(Object o){
+
+	1. verific daca O  e null
+ if (o==null)
+return false;
+
+2. verificare-> O  instance of Animal;
+return false;
+
+animal  a=(Animal) o -> astfel pot face downcast la specie
+apoi se verifica instantele this.age ==a.age si la fel si cu specie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detaliu agregare vs compunere
+COMPUNERE!!!!
+
+class A {
+	
+	ArrayList list<Integer>list;
+	
+	Public A(){
+		list=new ArrayList();
+	}
+	
+}
+
+
+p.s.mail
+
+A a= new A();
+
+
+class A{
+	ArrayList <Integer> list;
+	public A(ArrayList<Integer>){
+
+	this.list=list
+}
+
+a doua versiune de main!!!!!!!!!!!!! a doua este agregare, array listul exista 
+
+ArraayList<Integer>List=new ArrayList();
+A a=new A(list);
+
+a=null
