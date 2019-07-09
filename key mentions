@@ -1,0 +1,55 @@
+Pentru a obtine valoarea caracterului aflat la o anumita pozitie, se foloseste metoda charAt(int). 
+Intuitiv, aceasta returneaza o valoare de tipul char
+
+
+Formatarea stringurilor --->Pentru o astfel de functionalitate, se poate utiliza metoda statica format(…). 
+
+
+Pentru a obtine un subsir dintr-un sir, cunoscand indecsii aferenti, se poate utiliza una dintre urmatoarele 2 metode:
+
+String substring(int beginIndex, int endIndex):
+returneaza un nou String care contine toate caracterele incepand cu indexul beginIndex pana la indexul endIndex - 1 inclusiv
+String substring(int beginIndex):
+returneaza un nou String care contine toate caracterele incepand cu indexul beginIndex pana la finalul sirului
+
+
+
+
+String toLowerCase() - returneaza un nou String, corespunzator primului, ce contine toate literele mici
+String toUpperCase() - similar, doar ca toate literele sunt mari.
+
+
+Metode ce returneaza indexul caracterului unui sir:
+
+int indexOf(int ch)	- Returneaza indexul primei  aparitii
+int lastIndexOf(int ch) - ultimei aparitii 
+int indexOf(String str)/int lastIndexOf(String str)	---> Returneaza indexul primei respectiv ultimei aparitii din sir a sirului str.
+
+
+
+este important de mentionat ca folosim String ca argument atunci cand avem acest tip (CharSequence). 
+
+
+
+
+
+Prelucrarea șirurilor. StringBuilder
+
+
+
+'String' -> tip numeric
+Toate clasele corespunzatoare tipurilor numerice contin o metoda statica, 
+valueOf(String) ce primeste ca parametru un sir de caractere si intoarce un obiect de tipul clasei,
+continand valoarea (numerica) reprezentata de String.
+
+
+Pentru a obtine valoarea de tip primitiv aferenta clasei, se va utiliza metoda <TIP_PRIMITIV>Value() (ex: doubleValue() pentru clasa Double)
+utilizarea metodei statice toString(<TIP_PRIMITIV>) a clasei Wrapper corespunzatoare tipului primitiv:
+
+Datorita eficientei si simplitatii cu care se poate actualiza un sir,
+StringBuilder este metoda recomandata de procesare a unui sir de caractere (i.e. prin concatenare, inserare, modificare, 
+stergere de caractere, etc.). La finalul modificarilor, se poate apela metoda toString() 
+ce va returna un obiect String corespunzator sirului de caractere stocat.
+
+
+Exista 4 constructori diferiti pentru clasa StringBuilder dintre care:
