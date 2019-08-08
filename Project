@@ -1,0 +1,55 @@
+package Project1;
+import java.util.ArrayList;
+
+
+public class  GuestList {
+
+	//clasa prin care se gestioneaza lista de participanti
+	
+	int locuriDisponibile;	
+	ArrayList<Guest> listaParticipanti;
+	ArrayList<Guest> participantiInAsteptare;
+
+	
+	// adaugarea unui participant
+	
+	public int addPerson(String nume) {
+		
+		if(listaParticipanti.contains(nume)) {
+			
+			return -1;
+		} else if {
+			
+			System.out.println("Felicitari! Locul tau la eveniment este confirmat. Te asteptam!");
+			System.out.println("Te-ai inscris cu succes in lista de asteptare si ai primit numarul de ordine <X>. Te vom notifica daca un loc devine disponibil");
+			
+			return 0;
+			
+		}
+    
+    
+    package Project1;
+
+public class Guest extends GuestList {
+
+	//clasa prin care se reprezinta participantii
+	
+	String lastName;
+	String firstName;
+	String email;
+	String phoneNumber;
+	
+	public boolean searchPerson(int nume) {
+		
+		if(listaParticipanti.con(lastName,firstName, email, phoneNumber){
+			 return true;
+		} else {
+			return false;
+		}
+	
+		
+		
+		
+		
+		
+    
